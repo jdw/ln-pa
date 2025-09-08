@@ -1,0 +1,108 @@
+<!-- Repo over at https://codeberg.org/propelling-agency/ln.pa
+
+    Stay safe, safe as your boobs!
+
+    /master
+-->
+
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Forward! - Propelling Agency</title>
+    </head>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        h1 {
+            color: blueviolet;
+            font-size: 400%;
+            margin-bottom: 1px;
+        }
+
+        #main {
+            border: 3px solid black;
+            border-radius: 10px;
+            width: 600px;
+            align-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            background-color: white;
+        }
+
+        #patterns {
+            visibility: hidden;
+        }
+
+        /**
+            Patterns from: https://projects.verou.me/css3patterns/ 
+            title: Cross-Dots
+            author: Natali Davydova
+        */
+        body {
+            background:
+                radial-gradient(black 3px, transparent 4px),
+                radial-gradient(black 3px, transparent 4px),
+                linear-gradient(#fff 4px, transparent 0),
+                linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+                linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+                #fff;
+                background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+                background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+        }
+
+        #proud-af {
+            background-image: url("/pride_flag.svg");
+            
+            width: 512px;
+            height: 325px;
+        }
+    </style>
+    <script>
+        async function fwd() {
+            const u=window.location.hash.substring(1).split("?")[0];
+            const dP=u.split("/")[0];
+            if (dP == "") return;
+            const r = await fetch(dP+"/data.json");
+    
+            if (!r.ok) throw new Error("!r.ok");
+                
+            const t = await r.json();
+            let nU=u;
+            if (u.endsWith('/')) nU = u.slice(0, -1);
+
+            const d = t[nU];
+
+            if (d === undefined) throw new Error("d === undefined");
+            const a = document.getElementById("d");
+            a.setAttribute("href", d);
+            a.textContent = d;
+            window.location.replace(d);
+        }
+    </script>
+    <body onload="fwd();">
+        <div id="main">
+        <center>
+            <h1>Propelling Agency</h1>
+            further || yours || truly
+            <br />
+            <br />
+            <br />
+            <!-- Progressive symbol. Intersex-inclusive LGBT progress pride flag by Valentino Vecchietti -->
+            <div id="proud-af"></div>
+            <h2>❤️⭐❤️ Stay safe, safe as your boobs! ❤️⭐❤️</h1>
+            <h3>Destination:</h2>
+            <a id="d"></a>
+            <br />
+            <br />
+            <h3>© Propelling Agency 2025 -</h3>
+            <br />
+            <a href="https://codeberg.org/propelling-agency/ln.pa/rss/branch/www">RSS</a>
+            <br />
+            <br />
+        </center>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Forward! - Propelling Agency</title>
+    </head>
+    <style>
+        body {
+            font-family: monospace;
+        }
+    </style>
+    <script>
+        async function displayOldDestination() {
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+            const oldD = params.get("oldD");
+
+            if (oldD) {
+                document.getElementById("h").textContent = "Invalid destination:";
+                document.getElementById("d").textContent = oldD;
+            }
+        }
+    </script>
+    <body onload="displayOldDestination()">
+        <center>
+            <img src="logo.png"></img> <!-- w/ "||" - Hello to matt@lunartik.com -->
+            <br />
+            <img src="pride-flag.jpg"></img>
+            <h1>❗ 404 ❗</h1>
+            <br />
+            <br />
+            <br />
+            <h2 id="h"></h2>
+            <h4><div id="d"></div></h4>
+            <br />
+            <br />
+            <br />
+            <h3>© Propelling Agency 2025 -</h3>
+        </center>
+    </body>
+</html>
