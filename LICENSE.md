@@ -9,7 +9,7 @@
   **SA** Adaptations must be shared under the same terms.
 
 [pal.id/](ln.pa)
-<< musick: Coph Nia -- Opus 77 >>
+<< musick: Coph Nia -- Our Lady of the Stars >>
 
 Links of the Future © 2025 by the geb got game manifesto.
 
