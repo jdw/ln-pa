@@ -1,6 +1,6 @@
 .PHONY: change
 change:
-	cd www-root && python -m http.server 8000
+	python -m http.server 8000
 
 .PHONY: consent-and-contemporary
 consent-and-contemporary:
@@ -17,4 +17,3 @@ addlink:
 .PHONY: link404
 link404:
 	./src/link404.sh
-	
